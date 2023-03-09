@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "33VfnlwTpD+NSLgJMojRXLhLvCag2jV4GjCh8Wegkc0bmRUuXT/5+kuEIY0YvNwxsGAIHeKeTJUuQFkxDaUJEQ==",
+  "success": true,
+  "projectFilePath": "D:\\Repos\\FusionX\\FusionX\\FusionX\\FusionX.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\1987kostya\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\7.0.0\\microsoft.netcore.app.runtime.win-x64.7.0.0.nupkg.sha512",
+    "C:\\Users\\1987kostya\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\7.0.0\\microsoft.windowsdesktop.app.runtime.win-x64.7.0.0.nupkg.sha512",
+    "C:\\Users\\1987kostya\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\7.0.0\\microsoft.aspnetcore.app.runtime.win-x64.7.0.0.nupkg.sha512",
+    "C:\\Users\\1987kostya\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\7.0.0\\runtime.win-x64.microsoft.dotnet.ilcompiler.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

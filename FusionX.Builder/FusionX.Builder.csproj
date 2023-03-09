@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>FusionXExporter</AssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Reference Include="CTFAK.Core">
+        <HintPath>..\..\..\..\ClickteamStuff\Decompiling\CTFAK2.0\CTFAK\Interface\CTFAK.Cli\bin\Debug\net7.0-windows\win-x64\CTFAK.Core.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
