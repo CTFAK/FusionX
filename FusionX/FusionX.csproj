@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -12,10 +12,10 @@
 
     <ItemGroup>
       <Reference Include="CTFAK.Core">
-        <HintPath>D:\ClickteamStuff\Decompiling\CTFAK2.0\CTFAK\Interface\CTFAK.Cli\bin\Release\net7.0-windows\win-x64\CTFAK.Core.dll</HintPath>
+        <HintPath>../Dependencies/CTFAK.Core.dll</HintPath>
       </Reference>
       <Reference Include="FNA">
-        <HintPath>D:\Repos\FNA\bin\Release\FNA.dll</HintPath>
+        <HintPath>../Dependencies/FNA.dll</HintPath>
       </Reference>
     </ItemGroup>
 
