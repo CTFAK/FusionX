@@ -10,7 +10,7 @@ public class FFrame
     public int Width;
     public int Height;
     public EventProgram Events = new UserCodeEventProgram();
-    public List<FObject> ObjectInstances = new List<FObject>();
+    public List<FObject> ObjectInstances = new();
     public void FromGameData(Frame frm)
     {
         Width = frm.Width;

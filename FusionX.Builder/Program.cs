@@ -2,11 +2,12 @@
 using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
-using FusionX.Builder;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
 using Utils = FusionX.Builder.Utils.Utils;
+
+namespace FusionX.Builder;
 
 public class Program
 {
@@ -16,8 +17,10 @@ public class Program
 
     [DllImport("kernel32.dll")]
     public static extern bool AttachConsole(int dwProcessId);
+
     public const string basePath = @"D:\Repos\FusionX\FusionX\FusionX";
     public const string testBuildFolder = @"D:\FusionXTestBuild";
+
     public static void Main(string[] args)
     {
 
@@ -49,7 +52,7 @@ public class Program
         //Copy base
         var newBaseDir = testBuildFolder + @"\base";
         Directory.CreateDirectory(newBaseDir);
-        Utils.Copy(basePath, newBaseDir);
+        Utils.Utils.Copy(basePath, newBaseDir);
 
         //Write code
         File.WriteAllText(Path.Combine(newBaseDir, "UserCode", "UserCodeEventProgram.cs"), code);
@@ -75,7 +78,7 @@ public class Program
         //Utils.DeleteDirectory(newBaseDir);
 
         //Copy dependencies
-        Utils.Copy("dependencies", testBuildFolder);
+        Utils.Utils.Copy("dependencies", testBuildFolder);
 
         //Copy CCN
         File.Delete(Path.Combine(outputDirectory, "Application.ccn"));

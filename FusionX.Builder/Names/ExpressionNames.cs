@@ -3,7 +3,7 @@
     public static class ExpressionNames
     {
         public static Dictionary<int, Dictionary<int, string>> ExpressionSystemDict =
-            new Dictionary<int, Dictionary<int, string>>()
+            new()
             {
                 {
                     -7, new Dictionary<int, string>

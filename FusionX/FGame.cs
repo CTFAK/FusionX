@@ -9,9 +9,9 @@ public class FGame
 {
     public FFrame currentFrame;
     public static FGame instance;
-    public Dictionary<int, FObjectInfo> ObjectInfos = new Dictionary<int, FObjectInfo>();
+    public Dictionary<int, FObjectInfo> ObjectInfos = new();
     public FImageBank Images;
-    public Random globalRandom = new Random(31012007);
+    public Random globalRandom = new(31012007);
 
     public static FGame GetCurrentGame()
     {

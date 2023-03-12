@@ -5,7 +5,7 @@ namespace FusionX.Builder;
 public class CodeWriter
 {
     public const string indent = "    ";
-    public StringBuilder builder = new StringBuilder();
+    public StringBuilder builder = new();
     public int currentIndent;
 
     public void AppendIndent()

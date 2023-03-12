@@ -3,7 +3,7 @@
     public class ActionNames
     {
         public static Dictionary<int, Dictionary<int, string>> systemDict =
-            new Dictionary<int, Dictionary<int, string>>()
+            new()
             {
                 {
                     -7, new Dictionary<int, string>()
@@ -287,7 +287,7 @@
                 }
             };
         public static Dictionary<int, string> extensionDict =
-            new Dictionary<int, string>()
+            new()
             {
                 {1, "SetPosition"},
                 {2, "SetX"},

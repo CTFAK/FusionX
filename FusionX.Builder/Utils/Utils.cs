@@ -42,8 +42,8 @@ public static class Utils
     }
     public static void Copy(string sourceDirectory, string targetDirectory)
     {
-        DirectoryInfo diSource = new DirectoryInfo(sourceDirectory);
-        DirectoryInfo diTarget = new DirectoryInfo(targetDirectory);
+        DirectoryInfo diSource = new(sourceDirectory);
+        DirectoryInfo diTarget = new(targetDirectory);
 
         CopyAll(diSource, diTarget);
     }

@@ -3,7 +3,7 @@
     public class ConditionNames
     {
         public static Dictionary<int, Dictionary<int, string>> ConditionSystemDict =
-               new Dictionary<int, Dictionary<int, string>>()
+               new()
                {
                     {
                          -7, new Dictionary<int, string>()

@@ -11,7 +11,7 @@ public class EventGroupConverter
 
         bool alreadyHasActionContent = false;
         // Conditions
-        List<ConditionWriterBase> cndWriters = new List<ConditionWriterBase>();
+        List<ConditionWriterBase> cndWriters = new();
         for (int i = 0; i < evGrp.Conditions.Count; i++)
         {
             var cnd = evGrp.Conditions[i];

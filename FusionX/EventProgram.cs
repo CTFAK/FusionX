@@ -7,7 +7,7 @@ public class EventProgram
 
     #region ObjectContext
 
-    public Dictionary<int, List<FObject>> ObjectContext = new Dictionary<int, List<FObject>>();
+    public Dictionary<int, List<FObject>> ObjectContext = new();
 
     public List<FObject> GetAll(int oi)
     {

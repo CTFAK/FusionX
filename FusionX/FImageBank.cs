@@ -2,5 +2,5 @@
 
 public class FImageBank
 {
-    public Dictionary<int, FImage> Items = new Dictionary<int, FImage>();
+    public Dictionary<int, FImage> Items = new();
 }
