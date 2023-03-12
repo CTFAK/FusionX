@@ -1,4 +1,5 @@
 ﻿using CTFAK;
+using CTFAK.FileReaders;
 using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
@@ -22,31 +23,31 @@ public class Program
 
     public static void Main(string[] args)
     {
+        if (AllocConsole())
+        {
+            AttachConsole(Process.GetCurrentProcess().Id);
+            Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
+        }
 
-        AllocConsole();
-        AttachConsole(Process.GetCurrentProcess().Id);
-        Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
+        if (args.Length < 2) 
+        {
+            throw new ArgumentException("The program expects at least 2 arguments: [Input Path] [Output Path] (Build ID = 0)");
+        }
+
+        var inputPath = args[0];
+        var outputPath = args[1];
+        var buildId = args.Length >= 3 ? int.Parse(args[3]) : 0;
+
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
-        // Initialize CTFAK, Load the application and convert events
-
-        var ccnPath = "Application.ccn";
-        var outputPath = "D:\\FusionXTestBuild";
-
-        if (args.Length > 1)
-        {
-            ccnPath = args[0];
-        }
 
         Core.Init();
         Core.Parameters = "";
-        Settings.Build = 284;
-        Settings.gameType = Settings.GameType.CBM;
-        var reader = new ByteReader(new FileStream(ccnPath, FileMode.Open));
-        var gameData = new GameData();
-        gameData.Read(reader);
-        reader.Close();
-        var code = GameConverter.Convert(gameData);
+        // Make sure to add support for both exe and cnn
+        var reader = new AutoFileReader();
+        reader.LoadGame(inputPath);
+        var code = GameConverter.Convert(reader.GetGameData());
+        // now check if it compiles
 
         //Copy base
         var newBaseDir = testBuildFolder + @"\base";
@@ -80,7 +81,6 @@ public class Program
         Utils.Utils.Copy("dependencies", testBuildFolder);
 
         //Copy CCN
-        File.Delete(Path.Combine(outputDirectory, "Application.ccn"));
-        File.Copy(ccnPath, Path.Combine(outputDirectory, "Application.ccn"));
+        File.Copy(inputPath, Path.Combine(outputDirectory, Path.GetFileName(inputPath)), true);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CTFAK;
+using CTFAK.FileReaders;
 using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
@@ -33,9 +34,10 @@ public class MainWindow : Game
         Core.Parameters = "";
         Settings.gameType = Settings.GameType.CBM;
         Settings.Build = 284;
-        var reader = new ByteReader(new FileStream("Application.ccn", FileMode.Open));
-        var gameData = new GameData();
-        gameData.Read(reader);
+        var reader = new AutoFileReader();
+        reader.LoadGame("Applcation./*put an extension here*/");
+        var gameData = reader.GetGameData();
+
         game = new FGame();
         game.LoadFromGameData(gameData, this);
 
