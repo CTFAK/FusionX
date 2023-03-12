@@ -5,7 +5,6 @@ using CTFAK.Utils;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text;
-using Utils = FusionX.Builder.Utils.Utils;
 
 namespace FusionX.Builder;
 
