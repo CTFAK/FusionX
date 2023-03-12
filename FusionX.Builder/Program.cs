@@ -36,8 +36,8 @@ public class Program
             ccnPath = args[0];
         }
 
-        CTFAKCore.Init();
-        CTFAKCore.Parameters = "";
+        Core.Init();
+        Core.Parameters = "";
         Settings.Build = 284;
         Settings.gameType = Settings.GameType.CBM;
         var reader = new ByteReader(new FileStream(ccnPath, FileMode.Open));

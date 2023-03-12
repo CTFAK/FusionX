@@ -7,6 +7,8 @@
         <Nullable>enable</Nullable>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <PublishAot>true</PublishAot>
+        <Platforms>x64</Platforms>
+		<LangVersion>latest</LangVersion>
 
     </PropertyGroup>
 
@@ -20,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Update="../Dependencies/CTFAK-Native.dll">
+	  <None Include="../Dependencies/x64/**" Visible="false">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>

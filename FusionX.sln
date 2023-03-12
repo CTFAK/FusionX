@@ -1,22 +1,31 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionX", "FusionX\FusionX.csproj", "{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33402.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FusionX", "FusionX\FusionX.csproj", "{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FusionX.Builder", "FusionX.Builder\FusionX.Builder.csproj", "{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FusionX.Builder", "FusionX.Builder\FusionX.Builder.csproj", "{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Debug|x64.ActiveCfg = Debug|x64
+		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Debug|x64.Build.0 = Debug|x64
+		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Release|x64.ActiveCfg = Release|x64
+		{59109CC7-3637-4DC5-BAA9-9B5ED2EB490A}.Release|x64.Build.0 = Release|x64
+		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Debug|x64.ActiveCfg = Debug|x64
+		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Debug|x64.Build.0 = Debug|x64
+		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Release|x64.ActiveCfg = Release|x64
+		{68DA20E7-C838-452B-ACD1-8E7EC25C8B9E}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69BE1E5F-3034-42AD-8A6E-F88E034077E2}
 	EndGlobalSection
 EndGlobal

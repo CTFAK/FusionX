@@ -1,4 +1,5 @@
-﻿using CTFAK.Memory;
+﻿using CTFAK;
+using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
 using Microsoft.Xna.Framework;
