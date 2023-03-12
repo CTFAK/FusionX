@@ -11,10 +11,10 @@ public class ConditionConverter
     {
         var writer = GetWriter(cnd.ObjectType, cnd.Num);
         writer.condition = cnd;
-        writer.Write(cnd,code,variables);
+        writer.Write(cnd, code, variables);
         return writer;
     }
-    
+
     public static ConditionWriterBase GetWriter(int objectType, int num)
     {
         switch (objectType)
@@ -42,7 +42,7 @@ public class ConditionConverter
                         return new CND_Always();
                     case -3:
                         return new CND_Compare();
-      
+
                 }
 
                 break;

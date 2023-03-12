@@ -1,6 +1,6 @@
 ﻿namespace FusionX.UserCode;
 
-public class UserCodeEventProgram:EventProgram
+public class UserCodeEventProgram : EventProgram
 {
-    
+
 }

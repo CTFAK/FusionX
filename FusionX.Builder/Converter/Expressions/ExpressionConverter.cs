@@ -1,6 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using CTFAK.MMFParser.Shared.Events;
 using System.Text;
-using CTFAK.MMFParser.Shared.Events;
 
 
 namespace FusionX.Builder.Expressions;
@@ -54,7 +53,7 @@ public class ExpressionConverter
                     case 10:
                         return $"MathHelper.SinDeg(";
                     case 23:
-                        return (expr.Loader as DoubleExp).Value.ToString().Replace(",",".");
+                        return (expr.Loader as DoubleExp).Value.ToString().Replace(",", ".");
                 }
                 break;
             case -3:
@@ -75,7 +74,7 @@ public class ExpressionConverter
                 break;
         }
 
-        return CreateCommon(expr,selfHandle);
+        return CreateCommon(expr, selfHandle);
 
     }
 

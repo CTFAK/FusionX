@@ -23,10 +23,10 @@ public static class Utils
     {
         if (ConditionNames.ConditionSystemDict.ContainsKey(objectType))
         {
-            if(ConditionNames.ConditionSystemDict[objectType].ContainsKey(num))
+            if (ConditionNames.ConditionSystemDict[objectType].ContainsKey(num))
                 return ConditionNames.ConditionSystemDict[objectType][num];
         }
-        
+
         return "Unknown";
     }
 
@@ -38,7 +38,7 @@ public static class Utils
 
     public static string ClearName(this string data)
     {
-        return CTFAK.Utils.Utils.ClearName(data).Replace(" ","_");
+        return CTFAK.Utils.Utils.ClearName(data).Replace(" ", "_");
     }
     public static void Copy(string sourceDirectory, string targetDirectory)
     {

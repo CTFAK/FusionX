@@ -1,11 +1,11 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text;
-using CTFAK;
+﻿using CTFAK;
 using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
 using FusionX.Builder;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Text;
 using Utils = FusionX.Builder.Utils.Utils;
 
 public class Program
@@ -20,14 +20,14 @@ public class Program
     public const string testBuildFolder = @"D:\FusionXTestBuild";
     public static void Main(string[] args)
     {
-        
+
         AllocConsole();
         AttachConsole(Process.GetCurrentProcess().Id);
         Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         Console.OutputEncoding = Encoding.UTF8;
         Console.InputEncoding = Encoding.UTF8;
         // Initialize CTFAK, Load the application and convert events
-        
+
         var ccnPath = "Application.ccn";
         var outputPath = "D:\\FusionXTestBuild";
 
@@ -35,7 +35,7 @@ public class Program
         {
             ccnPath = args[0];
         }
-        
+
         CTFAKCore.Init();
         CTFAKCore.Parameters = "";
         Settings.Build = 284;
@@ -45,15 +45,15 @@ public class Program
         gameData.Read(reader);
         reader.Close();
         var code = GameConverter.Convert(gameData);
-        
+
         //Copy base
-        var newBaseDir = testBuildFolder+@"\base";
+        var newBaseDir = testBuildFolder + @"\base";
         Directory.CreateDirectory(newBaseDir);
-        Utils.Copy(basePath,newBaseDir);
-        
+        Utils.Copy(basePath, newBaseDir);
+
         //Write code
-        File.WriteAllText(Path.Combine(newBaseDir,"UserCode","UserCodeEventProgram.cs"),code);
-        
+        File.WriteAllText(Path.Combine(newBaseDir, "UserCode", "UserCodeEventProgram.cs"), code);
+
         //Build with dotnet
         var processStartInfo = new ProcessStartInfo();
         processStartInfo.WorkingDirectory = newBaseDir;
@@ -65,20 +65,20 @@ public class Program
         proc.OutputDataReceived += (sender, args) => Console.WriteLine(args.Data);
         proc.BeginOutputReadLine();
         proc.WaitForExit();
-        
+
         //Copy the build results
         var outputDirectory = testBuildFolder;
-        File.Delete(Path.Combine(outputDirectory,"game.exe"));
-        File.Copy(Path.Combine(newBaseDir,"bin","Release","net7.0","win-x64","native","FusionX.exe"),Path.Combine(outputDirectory,"game.exe"));
-        
+        File.Delete(Path.Combine(outputDirectory, "game.exe"));
+        File.Copy(Path.Combine(newBaseDir, "bin", "Release", "net7.0", "win-x64", "native", "FusionX.exe"), Path.Combine(outputDirectory, "game.exe"));
+
         //Delete the build folder
         //Utils.DeleteDirectory(newBaseDir);
 
         //Copy dependencies
-        Utils.Copy("dependencies",testBuildFolder);
-        
+        Utils.Copy("dependencies", testBuildFolder);
+
         //Copy CCN
-        File.Delete(Path.Combine(outputDirectory,"Application.ccn"));
-        File.Copy(ccnPath,Path.Combine(outputDirectory,"Application.ccn"));
+        File.Delete(Path.Combine(outputDirectory, "Application.ccn"));
+        File.Copy(ccnPath, Path.Combine(outputDirectory, "Application.ccn"));
     }
 }

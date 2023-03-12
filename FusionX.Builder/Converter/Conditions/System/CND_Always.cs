@@ -2,7 +2,7 @@
 
 namespace FusionX.Builder.Conditions.System;
 
-public class CND_Always:ConditionWriterBase
+public class CND_Always : ConditionWriterBase
 {
     public override bool IsSimple => true;
     public override bool UsesInstances => false;

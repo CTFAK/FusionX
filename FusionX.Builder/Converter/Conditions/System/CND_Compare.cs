@@ -11,6 +11,6 @@ public class CND_Compare : ConditionWriterBase
     {
         var expr1 = act.Items[0].Loader as ExpressionParameter;
         var expr2 = act.Items[1].Loader as ExpressionParameter;
-        code.AppendLineIndented($"result = {ExpressionConverter.ConvertExpression(expr1,-1)} {expr2.GetOperator()} {ExpressionConverter.ConvertExpression(expr2,-1)};");
+        code.AppendLineIndented($"result = {ExpressionConverter.ConvertExpression(expr1, -1)} {expr2.GetOperator()} {ExpressionConverter.ConvertExpression(expr2, -1)};");
     }
 }

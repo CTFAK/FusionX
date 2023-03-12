@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace EventPreprocessor
+﻿namespace EventPreprocessor
 {
     public class ConditionNames
     {

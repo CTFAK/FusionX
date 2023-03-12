@@ -17,7 +17,7 @@ public class FObject
     }
     public void Draw(SpriteBatch batch)
     {
-        batch.Draw(sprite,new Vector2(x,y),Color.White);
+        batch.Draw(sprite, new Vector2(x, y), Color.White);
     }
 
     public void Update(GameTime time)
@@ -44,9 +44,9 @@ public class FObject
     {
         return alterableValues[index];
     }
-    public void AddToAlterableValue(int index,double value)
+    public void AddToAlterableValue(int index, double value)
     {
-        alterableValues[index]=alterableValues[index]+value;
+        alterableValues[index] = alterableValues[index] + value;
     }
 
     public static FObject Create(int oi, int posX, int posY)
@@ -56,11 +56,11 @@ public class FObject
         obj.y = posY;
         obj.oi = oi;
         obj.ObjectInfo = FGame.GetCurrentGame().ObjectInfos[oi];
-        obj.sprite= FGame.GetCurrentGame().Images.Items[obj.ObjectInfo.mainSprite].GetTexture();
-        
+        obj.sprite = FGame.GetCurrentGame().Images.Items[obj.ObjectInfo.mainSprite].GetTexture();
+
         FGame.GetCurrentGame().currentFrame.ObjectInstances.Add(obj);
         return obj;
     }
     #endregion
-    
+
 }

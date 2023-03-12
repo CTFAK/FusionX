@@ -9,7 +9,7 @@ public class FGame
 {
     public FFrame currentFrame;
     public static FGame instance;
-    public Dictionary<int,FObjectInfo> ObjectInfos = new Dictionary<int, FObjectInfo>();
+    public Dictionary<int, FObjectInfo> ObjectInfos = new Dictionary<int, FObjectInfo>();
     public FImageBank Images;
     public Random globalRandom = new Random(31012007);
 
@@ -30,7 +30,7 @@ public class FGame
             var newImg = new FImage();
             newImg.Handle = img.Key;
             newImg.fileImage = img.Value;
-            Images.Items.Add(img.Key,newImg);
+            Images.Items.Add(img.Key, newImg);
         }
 
         foreach (var oi in game.FrameItems)
@@ -40,7 +40,7 @@ public class FGame
             if (oi.Value.Properties is ObjectCommon common)
             {
                 newOI.mainSprite = common.Animations.AnimationDict[0].DirectionDict[0].Frames[0];
-                ObjectInfos.Add(newOI.Handle,newOI);
+                ObjectInfos.Add(newOI.Handle, newOI);
             }
         }
 

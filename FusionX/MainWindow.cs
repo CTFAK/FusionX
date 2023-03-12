@@ -1,17 +1,15 @@
-﻿using CTFAK;
-using CTFAK.Memory;
+﻿using CTFAK.Memory;
 using CTFAK.MMFParser.CCN;
 using CTFAK.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace FusionX;
 
-public class MainWindow:Game
+public class MainWindow : Game
 {
     public GraphicsDeviceManager graphics;
-    
+
     public SpriteBatch spriteBatch;
     public FGame game;
     public static MainWindow inst;
@@ -28,7 +26,7 @@ public class MainWindow:Game
         IsMouseVisible = true;
     }
     protected override void LoadContent()
-    { 
+    {
         spriteBatch = new SpriteBatch(GraphicsDevice);
         Core.Init();
         Core.Parameters = "";
@@ -38,7 +36,7 @@ public class MainWindow:Game
         var gameData = new GameData();
         gameData.Read(reader);
         game = new FGame();
-        game.LoadFromGameData(gameData,this);
+        game.LoadFromGameData(gameData, this);
 
     }
 
@@ -46,7 +44,7 @@ public class MainWindow:Game
     {
         game.Render(spriteBatch);
     }
-    
+
     protected override void Update(GameTime gameTime)
     {
         game.Update(gameTime);

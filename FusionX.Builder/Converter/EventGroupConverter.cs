@@ -16,13 +16,13 @@ public class EventGroupConverter
         {
             var cnd = evGrp.Conditions[i];
             var writer = new CodeWriter();
-            var cndWrt = ConditionConverter.Convert(cnd,writer,variables);
+            var cndWrt = ConditionConverter.Convert(cnd, writer, variables);
             cndWriters.Add(cndWrt);
             if (cndWrt.IsSimple)
             {
                 if (cndWrt.UsesInstances)
                     throw new NotImplementedException("Writer can't be simple and use instances at the same time");
-                code.AppendLineIndented($"if (!({writer.ToString().Replace("result = ","")})) return;");
+                code.AppendLineIndented($"if (!({writer.ToString().Replace("result = ", "")})) return;");
             }
             else
             {
@@ -36,7 +36,7 @@ public class EventGroupConverter
                     code.AppendLineIndented($"var currentObject = context{rnd}[c];");
                     var num = Utils.Utils.GetUniqueNumber();
                     code.AppendLineIndented($"bool result{num} = false;");
-                    code.AppendLineIndented(writer.ToString().Replace("result",$"result{num}"));
+                    code.AppendLineIndented(writer.ToString().Replace("result", $"result{num}"));
                     code.AppendLineIndented($"if (!(result{num})) RemoveFromContext(currentObject);");
                     code.EndBrace();
                 }
@@ -44,13 +44,13 @@ public class EventGroupConverter
                 {
                     var num = Utils.Utils.GetUniqueNumber();
                     code.AppendLineIndented($"bool result{num} = false;");
-                    writer.Replace("result",$"result{num}");
+                    writer.Replace("result", $"result{num}");
                     code.AppendWriterIndented(writer);
                     code.AppendLineIndented($"if (!result{num}) return;");
                 }
             }
         }
-        
+
         // Actions
         for (int i = 0; i < evGrp.Actions.Count; i++)
         {
@@ -80,7 +80,7 @@ public class EventGroupConverter
                 code.AppendWriterIndented(writer);
             }
         }
-        
+
         code.AppendLineIndented("ResetObjectContext();");
 
 

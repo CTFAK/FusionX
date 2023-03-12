@@ -10,6 +10,6 @@ public class CND_CompareY : ConditionWriterBase
     public override void Write(Condition act, CodeWriter code, CodeWriter variables)
     {
         var expr = act.Items[0].Loader as ExpressionParameter;
-        code.AppendLineIndented($"result = currentObject.y {expr.GetOperator()} {ExpressionConverter.ConvertExpression(expr,act.ObjectInfo)};");
+        code.AppendLineIndented($"result = currentObject.y {expr.GetOperator()} {ExpressionConverter.ConvertExpression(expr, act.ObjectInfo)};");
     }
 }

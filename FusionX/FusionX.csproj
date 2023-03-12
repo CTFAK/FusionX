@@ -19,4 +19,10 @@
       </Reference>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="../Dependencies/CTFAK-Native.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>

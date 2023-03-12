@@ -4,7 +4,7 @@ using Action = CTFAK.MMFParser.Shared.Events.Action;
 
 namespace FusionX.Builder.Actions.Common;
 
-public class ACT_SetAlterableValue:ActionWriterBase
+public class ACT_SetAlterableValue : ActionWriterBase
 {
     public override bool UsesInstances => true;
     public override void Write(Action act, CodeWriter code, CodeWriter variables)

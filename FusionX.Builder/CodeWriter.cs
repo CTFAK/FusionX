@@ -7,7 +7,7 @@ public class CodeWriter
     public const string indent = "    ";
     public StringBuilder builder = new StringBuilder();
     public int currentIndent;
-    
+
     public void AppendIndent()
     {
         for (int i = 0; i < currentIndent; i++)
@@ -19,7 +19,7 @@ public class CodeWriter
     {
         builder.Append(str);
     }
-    
+
     public void AppendIndented(string str)
     {
         AppendIndent();

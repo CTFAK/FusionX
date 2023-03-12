@@ -6,7 +6,7 @@ public class EventProgram
 {
 
     #region ObjectContext
-    
+
     public Dictionary<int, List<FObject>> ObjectContext = new Dictionary<int, List<FObject>>();
 
     public List<FObject> GetAll(int oi)
@@ -15,7 +15,7 @@ public class EventProgram
         var instances = FGame.GetCurrentGame().currentFrame.ObjectInstances;
         foreach (var obj in instances)
         {
-            if(obj.oi==oi)
+            if (obj.oi == oi)
                 list.Add(obj);
         }
 
@@ -25,13 +25,13 @@ public class EventProgram
     {
         if (ObjectContext.ContainsKey(oi))
             ObjectContext[oi] = GetAll(oi);
-        else ObjectContext.Add(oi,GetAll(oi));
+        else ObjectContext.Add(oi, GetAll(oi));
     }
     public void ClearAll(int oi)
     {
         if (ObjectContext.ContainsKey(oi))
             ObjectContext[oi].Clear();
-        else ObjectContext.Add(oi,new List<FObject>());
+        else ObjectContext.Add(oi, new List<FObject>());
     }
     public List<FObject> GetContextForOI(int oi)
     {
@@ -57,8 +57,8 @@ public class EventProgram
 
     public void AddToContext(int oi, FObject obj)
     {
-        if(!ObjectContext.ContainsKey(oi))
-            ObjectContext.Add(oi,new List<FObject>());
+        if (!ObjectContext.ContainsKey(oi))
+            ObjectContext.Add(oi, new List<FObject>());
         ObjectContext[oi].Add(obj);
     }
     public void RemoveFromContext(FObject obj)
@@ -84,7 +84,7 @@ public class EventProgram
     }
     public bool IsKeyPressed(Keys key)
     {
-        return currentState.IsKeyDown(key)&&!oldState.IsKeyDown(key);
+        return currentState.IsKeyDown(key) && !oldState.IsKeyDown(key);
     }
     public int Random(int max)
     {
@@ -95,7 +95,7 @@ public class EventProgram
     {
         return FGame.GetCurrentGame().globalRandom.Next(min, max);
     }
-    
+
 
     #endregion
     #region InternalProperties
@@ -110,10 +110,10 @@ public class EventProgram
     {
         currentState = Keyboard.GetState();
         timerValue += ms;
-        if(IsKeyPressed(Keys.Insert))
+        if (IsKeyPressed(Keys.Insert))
             Console.WriteLine(FGame.GetCurrentGame().currentFrame.ObjectInstances.Count);
-        if(IsKeyPressed(Keys.Home))
-            Console.WriteLine(1000f/ms);
+        if (IsKeyPressed(Keys.Home))
+            Console.WriteLine(1000f / ms);
         UserCode();
         startOfFrame = false;
         oldState = currentState;
@@ -121,6 +121,6 @@ public class EventProgram
 
     public virtual void UserCode()
     {
-        
+
     }
 }

@@ -9,7 +9,7 @@ public class ActionConverter
     public static ActionWriterBase Convert(Action act, CodeWriter code, CodeWriter variables)
     {
         var writer = GetWriter(act.ObjectType, act.Num);
-        writer.Write(act,code,variables);
+        writer.Write(act, code, variables);
         return writer;
     }
 
