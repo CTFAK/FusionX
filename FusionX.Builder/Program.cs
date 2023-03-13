@@ -30,7 +30,7 @@ public class Program
 
         if (args.Length < 2) 
         {
-            throw new ArgumentException("The program expects at least 2 arguments: [Input Path] [Output Path] (Build ID = 0)");
+            throw new ArgumentException("The program expects at least 2 arguments: [Input Path] [Output Directory] (Build ID = 0)");
         }
 
         var inputPath = args[0];
@@ -44,10 +44,10 @@ public class Program
         reader.LoadGame(inputPath);
         var code = GameConverter.Convert(reader.GetGameData());
 
-        //Copy base
-        var newBaseDir = testBuildFolder + @"\base";
-        Directory.CreateDirectory(newBaseDir);
-        Utils.Utils.Copy(basePath, newBaseDir);
+        if (Directory.Exists(outputPath))
+            Directory.Delete(outputPath, true);
+
+        Directory.CreateDirectory(outputPath);
 
         //Write code
         File.WriteAllText(Path.Combine(newBaseDir, "UserCode", "UserCodeEventProgram.cs"), code);

@@ -15,6 +15,7 @@ public class MainWindow : Game
     public SpriteBatch spriteBatch;
     public FGame game;
     public static MainWindow inst;
+
     public MainWindow()
     {
         inst = this;
@@ -27,6 +28,7 @@ public class MainWindow : Game
         Window.AllowUserResizing = false;
         IsMouseVisible = true;
     }
+
     protected override void LoadContent()
     {
         spriteBatch = new SpriteBatch(GraphicsDevice);

@@ -20,6 +20,9 @@
     <None Include="../Dependencies/x64/**" Visible="false">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+	  
+    <Compile Remove="game-project-template/**" />
+	<Content Include="game-project-template/**" />
 
     <Folder Include="game-project-template" CopyToOutputDirectory="Always" />
   </ItemGroup>
