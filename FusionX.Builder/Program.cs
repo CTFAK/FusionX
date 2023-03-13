@@ -18,9 +18,6 @@ public class Program
     [DllImport("kernel32.dll")]
     public static extern bool AttachConsole(int dwProcessId);
 
-    public const string basePath = @"D:\Repos\FusionX\FusionX\FusionX";
-    public const string testBuildFolder = @"D:\FusionXTestBuild";
-
     public static void Main(string[] args)
     {
         if (AllocConsole())
@@ -28,6 +25,8 @@ public class Program
             AttachConsole(Process.GetCurrentProcess().Id);
             Console.SetOut(new StreamWriter(Console.OpenStandardOutput()));
         }
+        Console.OutputEncoding = Encoding.UTF8;
+        Console.InputEncoding = Encoding.UTF8;
 
         if (args.Length < 2) 
         {
@@ -38,16 +37,12 @@ public class Program
         var outputPath = args[1];
         var buildId = args.Length >= 3 ? int.Parse(args[3]) : 0;
 
-        Console.OutputEncoding = Encoding.UTF8;
-        Console.InputEncoding = Encoding.UTF8;
-
         Core.Init();
         Core.Parameters = "";
-        // Make sure to add support for both exe and cnn
+        
         var reader = new AutoFileReader();
         reader.LoadGame(inputPath);
         var code = GameConverter.Convert(reader.GetGameData());
-        // now check if it compiles
 
         //Copy base
         var newBaseDir = testBuildFolder + @"\base";

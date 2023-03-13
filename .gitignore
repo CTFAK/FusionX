@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # JetBrains
 .idea/
+
+# VSCode
+.vscode/

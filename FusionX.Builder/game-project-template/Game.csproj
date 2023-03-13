@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Platforms>x64</Platforms>
+        <LangVersion>latest</LangVersion>
+        <PublishAOT>true</PublishAOT>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="FusionX">
+            <HintPath>../FusionX.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+</Project>
